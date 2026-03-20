@@ -1,0 +1,98 @@
+/* Rofi Wallpaper Theme */
+* {
+    background-color:            #1e1e2eE6; /* Tumšs, nedaudz caurspīdīgs */
+    text-color:                  #cdd6f4;
+    font:                        "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    width:                        1000px;
+    height:                       350px;
+    anchor:                       center;
+    location:                     center;
+    x-offset:                     0;
+    y-offset:                     0;
+    border:                       2px;
+    border-radius:                15px;
+    border-color:                 #8839ef; /* Violetā apmale */
+    cursor:                       "default";
+}
+
+mainbox {
+    spacing:                     0px;
+    background-color:            transparent;
+    children:                    [ "listview", "inputbar" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      10px;
+    padding:                     5px;
+    border:                      1px;
+    border-radius:               10px;
+    border-color:                #313244;
+    background-color:            #181825;
+    text-color:                  #cdd6f4;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  #8839ef;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Meklēt tapeti...";
+    placeholder-color:           inherit;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     5; /* Cik bildes rādīt horizontāli */
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     10px;
+    margin:                      10px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  #cdd6f4;
+    cursor:                      pointer;
+}
+
+element selected {
+    background-color:            #313244;
+    text-color:                  #cdd6f4;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        180px; /* Bilžu izmērs */
+    cursor:                      inherit;
+}
+
+element-text {
+    enabled:                     false; /* Noslēpj faila nosaukumu, rāda tikai bildi */
+}

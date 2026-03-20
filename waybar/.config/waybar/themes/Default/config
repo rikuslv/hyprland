@@ -1,0 +1,76 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 15,
+    "modules-left": ["hyprland/workspaces", "hyprland/window", "cpu"],
+    "modules-center": ["clock", "custom/spotify"],
+    "modules-right": ["pulseaudio", "network", "battery", "custom/exit", "custom/reboot", "custom/power"],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format-icons": {
+            "default": "",
+            "active": "",
+            "urgent": ""
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 20
+    },
+    "clock": {
+        "format": "  {:%d.%m | %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/spotify": {
+        "format": "  󰒮  {icon}  󰒭",
+        "format-icons": {
+            "Playing": "󰏤",
+            "Paused": "󰐊",
+            "default": "󰐊"
+        },
+        "return-type": "json",
+        "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{status}}\", \"alt\": \"{{status}}\"}' 2>/dev/null || echo '{\"text\": \"Stopped\", \"alt\": \"Paused\"}'",
+        "interval": 2,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous"
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "󰖪  Offline"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "cpu": {
+        "format": "  {usage}%"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+	"format-muted": " {volume}%",
+        "format-icons": { "default": [" ", " ", " "] },
+        "on-click": "pavucontrol"
+    },
+    "custom/exit": {
+        "format": "󰈆 ",
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/reboot": {
+        "format": "󰜉 ",
+        "on-click": "systemctl reboot"
+    },
+    "custom/power": {
+        "format": " ",
+        "on-click": "systemctl poweroff"
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema_out.json",
+    "logo": {
+        "source": "~/Pictures/thumb-400-pink-anime-5974.webp",
+        "width": 25,
+        "height": 12,
+        "padding": {
+            "top": 1,
+            "left": 2
+        }
+    },
+    "display": {
+        "separator": "   "
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\n\n"
+        },
+        {
+            "type": "title",
+            "key": " user",
+            "keyColor": "blue"
+        },
+        {
+            "type": "os",
+            "key": "󰣇 hname",
+            "keyColor": "blue"
+        },
+        {
+            "type": "uptime",
+            "key": "󱎫 uptime",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "kernel",
+            "key": "⚙ kernel",
+            "keyColor": "red"
+        },
+        {
+            "type": "terminal",
+            "key": " term",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": " shell",
+            "keyColor": "blue"
+        },
+        {
+            "type": "cpu",
+            "key": " cpu",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "disk",
+            "key": "󰋊 disk",
+            "keyColor": "blue"
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 memory",
+            "keyColor": "red"
+        },
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
+    ]
+}

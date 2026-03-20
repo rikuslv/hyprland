@@ -1,0 +1,67 @@
+configuration {
+    show-icons: true;
+}
+
+* {
+    bg-col:  #111111;
+    purple: #7c4dff;
+    fg-col: #ffffff;
+    selected-col: #242424;
+    background-color: transparent;
+    text-color: @fg-col;
+}
+
+window {
+    width: 600px;
+    height: 600px;
+    background-color: @bg-col;
+    border: 3px solid;
+    border-color: @purple;
+    border-radius: 15px;
+}
+
+mainbox {
+    padding: 10px;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    background-color: #1a1a1a;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    children: [ "prompt", "entry" ];
+}
+
+prompt {
+    text-color: @purple;
+    padding: 0 10px;
+}
+
+listview {
+    padding: 10px;
+    columns: 1; /* Tikai viena kolonna, lai bildes būtu blakus tekstam */
+    lines: 6;
+    spacing: 10px;
+}
+
+element {
+    padding: 8px;
+    border-radius: 10px;
+    orientation: horizontal; /* Teksts blakus bildei */
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: @purple;
+}
+
+element-icon {
+    size: 80px; /* Mazāks un glītāks preview izmērs */
+    border-radius: 5px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    padding: 0 15px;
+}

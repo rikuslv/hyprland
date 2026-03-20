@@ -1,0 +1,4 @@
+discord/.config/discord/*
+!discord/.config/discord/settings.json
+spotify/.config/spotify/*
+!spotify/.config/spotify/prefs

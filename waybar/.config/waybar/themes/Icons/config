@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 5,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "cpu", "custom/playerctl", "custom/logout", "custom/reboot", "custom/power"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": { "default": "" },
+        "persistent-workspaces": { "*": 2 }
+    },
+
+    "clock": { "format": " {:%H:%M}" },
+
+    "pulseaudio": { 
+        "format": "󰕾 {volume}%",
+        "on-click": "pavucontrol" 
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰤮 Disconnected",
+        "tooltip-format-wifi": "Signal: {signalStrength}%",
+        "max-length": 25
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "cpu": { "format": "󰍛 {usage}%" },
+
+    "custom/playerctl": {
+        "format": "󰎈 {}",
+        "exec": "playerctl -a metadata --format '{{artist}} - {{title}}' -F",
+        "max-length": 20,
+        "on-click": "playerctl play-pause"
+    },
+
+    "custom/logout": { "format": "󰈆", "on-click": "hyprctl dispatch exit" },
+    "custom/reboot": { "format": "󰜉", "on-click": "reboot" },
+    "custom/power": { "format": "󰐥", "on-click": "shutdown now" }
+}

@@ -1,0 +1,61 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(10, 10, 10, 0.95);
+    color: #ffffff;
+    border-right: 1px solid #222222;
+}
+
+#clock.time { font-size: 22px; font-weight: 900; color: #d1ff1a; padding: 15px 0 5px 0; }
+#clock.date { font-size: 10px; color: #888888; padding-bottom: 10px; }
+#cpu, #memory { font-size: 11px; color: #aaaaaa; padding: 5px 0; }
+
+#taskbar button { padding: 10px 0; opacity: 0.4; }
+#taskbar button.active { opacity: 1; border-left: 2px solid #d1ff1a; }
+
+#custom-power, #custom-reboot, #custom-quit {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 20px;
+    margin: 4px 8px;
+    padding: 8px 0;
+    border: 1px solid #313244;
+}
+
+#custom-power { color: #f38ba8; }
+
+#network, #pulseaudio, #tray, #custom-sep { padding: 8px 0; color: #cccccc; }
+
+/* Akumulatora stils */
+#battery {
+    padding: 8px 0;
+    color: #cccccc;
+}
+
+#battery.critical {
+    color: #ff5555; /* Sarkans */
+    font-weight: bold;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging {
+    color: #d1ff1a;
+}
+
+@keyframes blink {
+    to {
+        color: #ff5555;
+        background-color: rgba(255, 85, 85, 0.1);
+    }
+}
+
+#clock.status { font-size: 10px; color: #666666; padding: 5px 0 15px 0; }

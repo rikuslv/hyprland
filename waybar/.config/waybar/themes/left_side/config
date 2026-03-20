@@ -1,0 +1,41 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 54,
+    "modules-left": ["clock#time", "clock#date", "custom/sep"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["tray", "network", "pulseaudio", "battery", "custom/sep", "custom/quit", "custom/reboot", "custom/power"],
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 22,
+        "on-click": "activate"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-critical": "{icon}\n{capacity}%",
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-update": "",
+        "interval": 2
+    },
+
+    "custom/quit": { "format": "󰈆", "on-click": "loginctl terminate-user $USER", "tooltip": false },
+    "custom/reboot": { "format": "󰑐", "on-click": "reboot", "tooltip": false },
+    "custom/power": { "format": "⏻", "on-click": "shutdown now", "tooltip": false },
+    "clock#time": { "format": "{:%H\n%M}" },
+    "clock#date": { "format": "{:%m/%d}" },
+    "cpu": { "format": "C\n{usage}%" },
+    "memory": { "format": "M\n{percentage}%" },
+    "network": { "format": "󰖩" },
+    "pulseaudio": { "format": "{icon}", "format-icons": {"default": ["󰕿", "󰖀", "󰕾"]} },
+    "tray": { "icon-size": 18, "spacing": 8 },
+    "clock#status": { "format": "{:%H:%M}" },
+    "custom/sep": { "format": "──" }
+}
